@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix</title>
+    <link rel="stylesheet" href="Stily.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Netflix</h1>
+    </header>
+    <main>
+      <h1>Quem está assistindo?</h1>
+      <section>
+        <ul>
+          <!-- Perfil 1 - Marcos -->
+          <li>
+            <a href="catalogo/catalogo.html">
+              <div class="avatar">
+                <img src="assets/Pinguin.jpg" alt="Marcos">
+              </div>
+              <span>Marcos</span>
+            </a>
+          </li>
+
+          <!-- Perfil 2 - Leandro -->
+          <li>
+            <a href="catalogo/catalogo.html">
+              <div class="avatar">
+                <img src="assets/urso.jpg" alt="Leandro">
+              </div>
+              <span>Leandro</span>
+            </a>
+          </li>
+
+          <!-- Perfil 3 - Sofia -->
+          <li>
+            <a href="catalogo/catalogo.html">
+              <div class="avatar">
+                <img src="assets/garota.jpg" alt="Sofia">
+              </div>
+              <span>Sofia</span>
+            </a>
+          </li>
+
+          <!-- Perfil 4 - Jonatas -->
+          <li>
+            <a href="catalogo/catalogo.html">
+              <div class="avatar">
+                <img src="assets/carro.jpg" alt="Jonatas">
+              </div>
+              <span>Jonatas</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <button id="theme-toggle">☀️</button>
+    <script>
+      const button = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      function setTheme(theme) {
+        if (theme === 'light') {
+          body.classList.add('light-theme');
+          button.textContent = 'Dark';
+        } else {
+          body.classList.remove('light-theme');
+          button.textContent = 'Light';
+        }
+      }
+
+      button.addEventListener('click', () => {
+        const activeTheme = body.classList.contains('light-theme') ? 'light' : 'dark';
+        setTheme(activeTheme === 'light' ? 'dark' : 'light');
+      });
+
+      // inicializa tema escuro por padrão
+      setTheme('dark');
+    </script>
+  </body>
+</html>
